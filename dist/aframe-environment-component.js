@@ -520,7 +520,7 @@
 	      }
 
 	      if (!this.groundGeometry) {
-	        this.groundGeometry = new THREE.PlaneGeometry(this.STAGE_SIZE + 2, this.STAGE_SIZE + 2, resolution - 1, resolution - 1);
+	        this.groundGeometry = new THREE.PlaneBufferGeometry(this.STAGE_SIZE + 2, this.STAGE_SIZE + 2, resolution - 1, resolution - 1);
 	      }
 	      var perlin = new PerlinNoise();
 	      var verts = this.groundGeometry.attributes.position.array;

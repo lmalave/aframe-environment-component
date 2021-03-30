@@ -97,7 +97,7 @@
     </div>
     <h1>
       <a class="previousPreset" href="#">&larr;</a>
-      <b>forest</b>
+      <b>vaporwave</b>
       <a class="nextPreset" href="#">&rarr;</a>
     </h1>
 
@@ -113,7 +113,7 @@
       AFRAME.registerComponent('preset-switcher', {
         init: function () {
           var el = this.el;
-          var presets = ['forest', 'default', 'contact', 'egypt', 'checkerboard', 'goaland', 'yavapai', 'goldmine', 'threetowers', 'poison', 'arches', 'tron', 'japan', 'dream', 'volcano', 'starry', 'osiris'];
+          var presets = ['vaporwave', 'forest', 'default', 'contact', 'egypt', 'checkerboard', 'goaland', 'yavapai', 'goldmine', 'threetowers', 'poison', 'arches', 'tron', 'japan', 'dream', 'volcano', 'starry', 'osiris'];
           var preset = 0;
 
           window.addEventListener('keydown', function (evt) {
@@ -146,7 +146,7 @@
 
     <a-scene overlay-visibility>
 
-      <a-entity environment="preset: forest" preset-switcher id="environment"></a-entity>
+      <a-entity environment="preset: vaporwave" preset-switcher id="environment"></a-entity>
 
     </a-scene>
 

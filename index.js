@@ -27,6 +27,7 @@ AFRAME.registerComponent('environment', {
     fog: {type:'float', default: 0, min: 0, max: 1},
 
     flatShading: {default: false},
+    opacity: { type: 'float', default: 1.0, min: 0.0, max: 1.0 },
     playArea: {type: 'float', default: 1, min: 0.5, max: 10},
     playAreaType: { default: 'circle', oneOf: [ 'circle', 'line' ]},
 
@@ -478,7 +479,6 @@ AFRAME.registerComponent('environment', {
       var perlin = new PerlinNoise();
       var verts = this.groundGeometry.attributes.position.array;
       var numVerts = verts.length;
-      console.log(`in updateGround, numVerts: ${numVerts}`)
       var frequency = 10;
       var inc = frequency / resolution;
       var x = 0;
@@ -570,7 +570,9 @@ AFRAME.registerComponent('environment', {
       this.groundMaterialProps = {
         map: this.groundTexture,
         emissive: new THREE.Color(0xFFFFFF),
-        emissiveMap: this.gridTexture
+        emissiveMap: this.gridTexture,
+        transparent: this.environmentData.opacity < 1.0  ? true : false,
+        opacity: this.environmentData.opacity,
       };
 
       // use .shading for A-Frame < 0.7.0 and .flatShading for A-Frame >= 0.7.0
